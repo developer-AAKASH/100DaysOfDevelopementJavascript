@@ -1,0 +1,1 @@
+Text from file1 will be copied to file2.
