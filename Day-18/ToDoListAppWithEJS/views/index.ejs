@@ -1,0 +1,22 @@
+<%- include("header") -%>
+
+    <section class="box" id="heading">
+        <h1><%= nameOfDay %></h1>
+    </section>
+
+    <section class="box">
+        <% for( let i = 0; i < newTasks.length; i++ ){ %>
+          <section class="item">
+            <input type="checkbox" name="" value="">
+            <p><%=newTasks[i] %></p>
+          </section>
+        <% } %>
+
+      <form class="item" action="/" method="post">
+          <input type="text" autocomplete="off" name="newTask" value="" placeholder="enter new task...">
+          <button type="submit" name="button" value="<%=nameOfDay %>">+</button>
+      </form>
+
+    </section>
+
+<%- include("footer") -%>
