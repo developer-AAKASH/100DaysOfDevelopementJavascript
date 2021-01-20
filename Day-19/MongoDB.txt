@@ -1,0 +1,66 @@
+There is two types of databases.
+	1) SQL
+	2) NOSQL
+	
+	NOSQL is newly introduced type of database and rather than not influenced by new trends you have to keep in mind that which type of database you have to choose for your software.
+	
+	Threr is three major point to keep in mind while choosing the database
+	1). Structure of your data.
+	2). Relationship between data.
+	3). Scalability of DBs --> virtual and Horizontal.
+
+----------------------------------------------------------------------------------------------------
+
+Quries in MongooDB ::::>>
+	get database list :
+		show dbs;
+		
+	Creating database:
+		use database_name;
+		use shopDB;
+		-->But just using above command, it dont show your database, you have to atleast add one record or collection to display it.
+		
+	get all schema list:
+		show collections;
+		
+	To create collection/table, you just have to do following.
+		For creating product table, write following
+		db.products.insertOne({ _id: 2, name: "Pencil", price: 0.80 });	
+		
+		This will create new collection/table name products in shopDB;
+CRUD Operation :::> 
+	Create :: insert the data :
+		db.products.insertOne({ _id: 1, name: "Pen", price: 1.20 });
+		db.products.insertMany( {list of objects} ) // for inserting many data at a time...
+		
+	Read :: get the data : 
+		db.products.find()
+		db.products.find({ _id: 2 }) // by any columan name
+	
+	Update :: update the data :
+		db.products.updateOne({ _id: 2 }, { $set: { price: 0.8 }} )
+		updateMany ---> for many data
+		
+	Destroy :: Delete the data :
+		db.products.deleteOne( { _id: 2 })
+	
+	Join or relationship:
+		For adding any related data, rather than creating new collection or table, you just add new object in to that data like below.
+		db.products.insertOne({
+			_id: 3,
+			name: "Rubber",
+			price: 1.50,
+			review: [
+				{
+					authorName: "Aakash",
+					rating: 5,
+					review: "Bahot badhiya"
+				},
+				{
+					authorName: "Rahil",
+					rating: 5,
+					review: "Akdam jhakkas !!"
+				}
+			]
+		})
+
