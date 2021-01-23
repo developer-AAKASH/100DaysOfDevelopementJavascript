@@ -1,0 +1,15 @@
+heroku login
+
+heroku create
+
+git add
+
+git commit -m "message"
+
+git push heroku master
+
+
+
+http://whispering-island-51350.herokuapp.com
+
+https://git.heroku.com/whispering-island-51350.git
