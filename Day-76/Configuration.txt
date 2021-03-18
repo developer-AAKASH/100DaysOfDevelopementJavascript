@@ -1,0 +1,59 @@
+----------------------------------------------DevAgram-App-Config-------------------
+
+
+"dependencies": {
+    "@react-native-community/masked-view": "^0.1.10",
+    "@react-native-firebase/app": "^8.3.0",
+    "@react-native-firebase/auth": "^8.3.1",
+    "@react-native-firebase/database": "^7.4.1",
+    "@react-native-firebase/storage": "^7.3.1",
+    "@react-navigation/native": "^5.7.3",
+    "@react-navigation/stack": "^5.9.0",
+    "native-base": "^2.13.13",
+    "prop-types": "^15.7.2",
+    "react": "16.13.1",
+    "react-native": "0.63.2",
+    "react-native-gesture-handler": "^1.7.0",
+    "react-native-image-picker": "^2.3.3",
+    "react-native-progress": "^4.1.2",
+    "react-native-reanimated": "^1.11.0",
+    "react-native-safe-area-context": "^3.1.4",
+    "react-native-screens": "^2.10.1",
+    "react-native-snackbar": "^2.2.3",
+    "react-native-vector-icons": "^7.0.0",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "shortid": "^2.2.15"
+  },
+
+
+
+
+++++++++++++++++++++++++++++ Dependencies ++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++ Icons ++++++++++++++++++++++++++++++++++
+
+1). 
+Edit android/app/build.gradle ( NOT android/build.gradle ) and add the following:
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+----------
+//config for firbase in  android/app/build.gradle
+apply plugin: 'com.google.gms.google-services'
+
+//config for firebase in android/build.gradle
+classpath 'com.google.gms:google-services:4.3.4'
+
+
+2). For android, create project in firebase authentication, one for android, and one for iOS
+
+From android, download "google-service.json file and put it in "android/app/".
+
+From IOS project, download "GoogleService-Info.plist" and put it into "IOSAppName/"
+
+This all config can be followed in this link in better and updated way :
+	https://rnfirebase.io
+
+----------------------------------------------
