@@ -1,0 +1,24 @@
+import React from 'react'
+import { StyleSheet, Text } from "react-native";
+import { Container, Spinner } from "native-base";
+
+export default function EmptyContainer() {
+    return (
+        <>
+            <Container style={styles.emptyContainer}>
+                <Spinner />
+            </Container>
+        </>
+    )
+};
+
+const styles = StyleSheet.create({
+    emptyContainer: {
+        flex: 1,
+        backgroundColor: "#1b262c",
+        justifyContent: "center",
+        alignItems: "center"
+    }
+});
+
+
