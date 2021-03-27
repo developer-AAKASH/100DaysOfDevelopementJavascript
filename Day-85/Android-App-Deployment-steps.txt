@@ -1,0 +1,72 @@
+Doc link for reference:
+	https://reactnative.dev/docs/signed-apk-android
+
+
+
+Deployment:
+	It is basically process of uploading your app or apk to google play store or App store.
+	-> This process require some additional steps to make it poosible for running our app globaly.
+	
+	-> Just apk is not sufficient, you should also provide a your signature file which uniquly identify your identity on the globe.
+	-> This signature will be digital only and this file geneated from key store file. this key-store file is nothing but a hash/encrypted file which holds our all the confidential crendential. 
+	
+	APK + Signature file + app.bundle
+	
+	we upload aab which generates extra sdk for different android versions.
+	
+	1). Generating the key-store file :
+	Android studio : -> go to any project -> go to its build options, -> then go generate signed Bundle/apk... -> select App-bundle, -> and select create new -> ( then set path and give name to it ) -> then fill the key value pair in that pop-up.
+	
+	2). Do some changes to gradles :
+
+	-> alias is basically you are giving name to your app or updated code.
+	-> copy that key-store file to your-project/android/app/.
+		and paste here.
+	-> Then go to android/gradle.properties 
+	
+	 and paste this thing... 
+		MYAPP_UPLOAD_STORE_FILE=your-key-store-filename.keystore
+		MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+		MYAPP_UPLOAD_STORE_PASSWORD=*****
+		MYAPP_UPLOAD_KEY_PASSWORD=*****
+	
+	Note: After following this process, if due to file/apk size, your upload get failed, 
+	you can un-comment line starting with, "# org.gradle.jvmargs=-X.....", in this line, 2048 m means 2048 MB so here, you can increase the size and that error will be solved."
+	
+	-> Now pase this line to your android/app/build.gradle -> in android section.
+	[ // this brackets is just for differentiate the lines... dont include it...
+		signingConfigs {
+		release {
+		    if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+		        storeFile file(MYAPP_UPLOAD_STORE_FILE)
+		        storePassword MYAPP_UPLOAD_STORE_PASSWORD
+		        keyAlias MYAPP_UPLOAD_KEY_ALIAS
+		        keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+		    }
+		}
+		}
+        ]
+        
+        -> And in same file, if you scroll down, in buildTypes section -> 	release {} 
+        	paste this line.
+        [
+        	signingConfig signingConfigs.release
+        ]
+        
+        -> Now all the steps is done, ite time to build the apk.
+	
+	3). Generate apk/bundle:
+		fire below commands in your projec folder.
+		[
+			cd android
+			./gradlew bundleRelease -- for generating bundle
+			./gradlew assembleRelease -- for generating apk
+		]
+	
+	-> Now go to android/app/build/outputs/bundle/release -> here you find app-release.aab
+	
+	-> and if you have fires assembleRelease option, you find android/app/build/outputs/apk/release -- apk file will be here.
+
+
+React-Expo doc link: https://reactnative.dev/docs/environment-setup
+		
