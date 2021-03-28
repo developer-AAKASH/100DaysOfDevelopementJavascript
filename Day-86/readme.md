@@ -4,3 +4,5 @@ Today I start developing Food-Delivery-App in which today, I develope Home-scree
 
 Till now I completed above screens and fully working.
 
+This app is more focused on designing rather than functionalities.
+
