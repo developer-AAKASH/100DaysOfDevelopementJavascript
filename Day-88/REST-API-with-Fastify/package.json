@@ -1,0 +1,16 @@
+{
+  "name": "rest-api-with-fastify",
+  "version": "1.0.0",
+  "description": "Learning Fastisy",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "AakashIsBest",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^3.14.1",
+    "mongoose": "^5.12.2",
+    "nodemon": "^2.0.7"
+  }
+}
