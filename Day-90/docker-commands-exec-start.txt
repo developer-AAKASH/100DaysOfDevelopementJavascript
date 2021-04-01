@@ -1,0 +1,38 @@
+1). Get busybox which is mini-linux-OS kind of thing in which you can play with linux command foe learning linux.
+-> It nothing but just an image for leraning docker( how you can pull any image)...
+docker pull busybox
+
+2). This is mongo image in which, you can without install/download mongo, you can use it.
+docker pull mongo
+
+3). for geeting all list of running image:
+docker ps --all
+
+4). You can select id of any image in order to get into it..
+sudo docker start f72741e4630d
+
+-> If you want to run any image and it it not running the you can start it using id:
+sudo docker start f72741e4630d
+
+5). Below is the command for getting into the image
+-> bash is command for that image..
+docker exec -it f72741e4630d bash
+
+-> for getting out from the image
+ctrl + d / exit
+
+6). For stoping the running image 
+docker stop f72741e4630d
+
+----------------
+docker exec -it f72741e4630d bash
+
+-> in this command, "exec" is an individual command.
+
+-> "-it" is the flag, "i" for STD-IN/OUT, "t" for changing terminal
+-> both this command for making some change in image.
+
+-> "bash" is command fired on that image, which works on image.
+
+--> You can learn more about "exec" command from the official documentation of docker.
+
