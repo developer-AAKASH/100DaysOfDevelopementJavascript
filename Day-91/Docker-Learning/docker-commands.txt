@@ -1,0 +1,12 @@
+// for building an docker image...
+sudo docker build .
+// for running the newly generated docker image
+sudo docker run 6d8d221e3dd8
+// some basic commands...
+sudo docker ps --all
+sudo docker ps
+// for getting into the docker image which is running...
+sudo docker exec -it 8801316c3a09 bash // ignore
+sudo docker exec -it 8801316c3a09 sh
+exit
+sudo docker ps --all
