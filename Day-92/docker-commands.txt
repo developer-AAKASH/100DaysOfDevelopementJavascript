@@ -1,0 +1,40 @@
+// for building an docker image...
+sudo docker build .
+// for running the newly generated docker image
+sudo docker run 6d8d221e3dd8
+// some basic commands...
+sudo docker ps --all
+sudo docker ps
+// for getting into the docker image which is running...
+sudo docker exec -it 8801316c3a09 bash // ignore
+sudo docker exec -it 8801316c3a09 sh
+exit
+sudo docker ps --all
+
+//Notes
+In "Dockerfile", for every command, new temporary container will be generated and once that particular command wil be succesfuly executed, then that new change will be merged with original/actual container.
+
+-> just for first command, which is basically getting an os, for that particular command, no temporary container will be created.
+
+---------------------------------------Apr-3-------------------
+Caching Memory of docker:
+    In docker, for executing every single command, new container will be created and after succesful execution of that command,
+that temporary container will be merged to main container.
+-> But, what if you run the docker file, again and again without making any change to file !?
+    Answer is if there is no change in commands, the docker file take help of those temporary container to re-build the docker image. That means that,
+the temporary container which is created for every single step/command will be stored or stay in cache memory and when we re-build the same docker file,
+it take help of cache memory to improve the performance.
+-> Now, one more question is what if we made some change to the existing docker file ?!
+    Answer is when we make any change in Dockerfile, what docker engine do is, it start following the steps from Dockerfile and compare it with cache, and if both are same, it uses the cache memory rather than creating new temporary container and wasting time.
+But, when it got any single mismatch, it stop following the cache and start creating new temporary container and complete the process despite of repeted or same  commands in further list of commands.
+
+Thats how Caching works in a docker.
+---
+docker build -t aakash555999/BestMongo:v1 .
+docker run aakash555999/BestMongo
+
+aakash555999 -- is your own user name to identify or differentiate under your username
+BestMongo -- is name of your docker image
+:v1 -- is basically you tagging version of that particular image with it !!
+---
+
