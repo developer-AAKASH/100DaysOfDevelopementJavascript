@@ -1,0 +1,10 @@
+# docker build -t YourDockerUserName/NodeApp . -- for building the docker image with custome name
+# docker run -p 3333:3000 YourDockerUserName/NodeApp -- exporting with the port given by docker image
+---optimization---
+# below line for improving performance
+COPY ./package.json ./
+
+# below line for improving performance
+COPY ./ ./
+
+
