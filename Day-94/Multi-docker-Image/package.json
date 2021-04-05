@@ -1,0 +1,14 @@
+{
+  "name": "multi-docker-image",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "AAKASH_IS_BEST",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.12.3"
+  }
+}

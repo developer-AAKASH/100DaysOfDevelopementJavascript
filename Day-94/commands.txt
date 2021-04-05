@@ -1,0 +1,12 @@
+// For setting up docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+// checking docker-compose installation
+docker-compose --version
+
+// For runnig docker compose for building multiple docker container image
+docker-compose up --build
+
+sudo docker-compose up --build
+ 
