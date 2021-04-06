@@ -1,0 +1,16 @@
+route-53:
+
+   It is a DNS service that allows us to buy a domain name for our web app and use it to access it globally.
+
+   -> If we are using AWS services in our web app, using the same service for a domain name becomes very easy to maintain all the thing and also we can set up and link everything very smoothly.
+
+   -> That doesn't mean that we can't use the domain from other service and rest thing of AWS, we can use it but all the things from one platform makes life easy.
+
+
+s3-bucket:
+
+   It is a web-hosting functionality which allows you to hist your web-sites and web-app very smoothly.
+
+   -> The permission and access to customize everything is the main power of this functionality.
+
+   -> AWS gives too much of customization in the context of security as well as reachability is just awesome.
