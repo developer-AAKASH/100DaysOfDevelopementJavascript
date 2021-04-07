@@ -1,0 +1,35 @@
+aws static website hosting s3 rules -- for seaching docs
+
+--------Defining a rules/policies for deploying a web-site through s3-bucket---
+
+Bucket > your-bucket-name > permission > In Bucket-policy section, you can define the policies for your bucket
+
+{
+	"Version": "2012-10-17",
+	"Statement": 
+	[
+		{
+			"Sid": "PublicReadGetObject", // means allow all the object to read publicaly
+			"Effect": "Allow", // action/rule is allowing
+			"Principal": "*", // * denots all the files...
+			"Action": [
+				"s3:GetObject" // Action/rule on s3 object.
+			],
+			"Resource": [
+				"arn:aws:s3:::You-s3-Bucket-Name/*" // this is the object for which the rule is define.
+			]
+		}	
+ 	]
+}
+
+-------------AWS lamdas:
+	AWS-lamdas are the functionality, in which you can configure basics functionality for responding to your web-page without configuring any servers, basically serverless.
+	
+	Now question is...
+	1). What is serverless !?
+		Serverless means you don't configure anything or any server for hosting your web-pages, you dont configure OS, set-up OS, and basically you dont do any thing, you use utilities which provide you server's functionality to host your web-pages.
+		-> Internally all this configuration will be done by host in our case, AWS.
+		-> So this way, many heavy tasks like how to maintain traffic, servers, and such a thing will be handled by AWS in place of us.
+		-> When we want very good level of customization for hosting giangatic web-apps, at that time, you supposed to configure your servers and all the thing.
+		
+So, Lamdas are the functionality which helps us to take little bit power in hour hand for providing response and some other functionality for our web-pages.
