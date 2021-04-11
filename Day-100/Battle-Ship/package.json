@@ -1,0 +1,17 @@
+{
+  "name": "battle-ship",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha",
+    "test:watch": "mocha --watch ./test ./",
+    "test:watch:playerMethods": "mocha --watch ./test/player_test.js ./game_logic/player_methods.js"
+  },
+  "author": "AAKASH-IS-BEST",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
+}
